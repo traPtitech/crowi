@@ -31,7 +31,7 @@ services:
     command: bash -c "npm install && npm run dev"
 
   mongodb:
-    image: mongo:3.6.3
+    image: mongo:3.6.3@sha256:d969194a7c4dcd817cae5dc726b1493547a3ad3f1b30f7f58857adc9ae6a4483
     volumes:
       - mongodb:/data/db
     restart: unless-stopped
@@ -39,7 +39,7 @@ services:
       - 27017:27017
 
   elasticsearch:
-    image: "ghcr.io/traptitech/es-with-sudachi-crowi:6.8.9-2.1.0"
+    image: "ghcr.io/traptitech/es-with-sudachi-crowi:6.8.9-2.1.0@sha256:921a965fcb33395c90deb4b638ed4203e18229732994b636ccea995ae5da45eb"
     environment:
       bootstrap.memory_lock: "true"
       discovery.type: single-node
@@ -58,7 +58,7 @@ services:
       - 9200:9200
 
   redis:
-    image: redis:4.0.8
+    image: redis:4.0.8@sha256:26c93c5b06eaa323bb1089500f42b0dd158138772348b865e364127f1d554982
     restart: unless-stopped
     ports:
       - 6379:6379

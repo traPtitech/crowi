@@ -1,4 +1,4 @@
-FROM node:12.14.1-buster-slim as builder
+FROM node:12.14.1-buster-slim@sha256:74b5b33367e7b693e42b15a691befd8ee10a9d4157718f78bed6ea289b3439ea as builder
 
 ARG NODE_ENV="production"
 
