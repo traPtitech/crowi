@@ -24,8 +24,8 @@
     "url": "https://github.com/crowi/crowi.git"
   },
   "engines": {
-    "node": "8.x",
-    "npm": "5.x"
+    "node": ">=12.22.12 <13",
+    "npm": "6.x"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
@@ -101,7 +101,7 @@
     "nodemailer-ses-transport": "~1.5.0",
     "passport": "^0.4.1",
     "passport-github": "^1.1.0",
-    "pkgcloud": "github:StartupFlow/pkgcloud#e484201ba4588ba506b28bb737340d48f4e1e3f1",
+    "pkgcloud": "git+https://github.com/StartupFlow/pkgcloud.git#e484201ba4588ba506b28bb737340d48f4e1e3f1",
     "plantuml-encoder": "^1.2.6",
     "platform": "^1.3.5",
     "query-string": "^6.9.0",
