@@ -5,6 +5,10 @@ ARG NODE_ENV="production"
 ENV CROWI_VERSION v1.7.9
 ENV NODE_ENV ${NODE_ENV}
 
+# Node.js の組み込み CA に含まれない GlobalSign Root R46 を信頼する
+COPY certs/GlobalSign_Root_R46.pem /usr/local/share/ca-certificates/GlobalSign_Root_R46.pem
+ENV NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/GlobalSign_Root_R46.pem
+
 RUN apt-get update && apt-get install -y git
 WORKDIR /crowi
 
