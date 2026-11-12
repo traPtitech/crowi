@@ -9,7 +9,8 @@ ENV NODE_ENV ${NODE_ENV}
 COPY certs/GlobalSign_Root_R46.pem /usr/local/share/ca-certificates/GlobalSign_Root_R46.pem
 ENV NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/GlobalSign_Root_R46.pem
 
-RUN apt-get update && apt-get install -y git
+RUN printf 'deb http://archive.debian.org/debian buster main\ndeb http://archive.debian.org/debian-security buster/updates main\n' > /etc/apt/sources.list \
+    && apt-get update && apt-get install -y git
 WORKDIR /crowi
 
 ADD . /crowi
